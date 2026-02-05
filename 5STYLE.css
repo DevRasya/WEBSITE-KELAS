@@ -1,0 +1,344 @@
+/* --- Tambahkan ini di bagian paling atas --- */
+* {
+    box-sizing: border-box;
+}
+
+/* --- Perbaikan Modal agar Video/Foto Tidak Bocor --- */
+.modal-body {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.modal-body img, .modal-body video {
+    max-height: 85vh; /* Sedikit lebih tinggi */
+    max-width: 95%;   /* Supaya ada jarak di kiri kanan */
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+/* --- Animasi Halus Saat Muncul --- */
+.card, .gallery-item {
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Perbaikan Navbar (Agar tidak kaku saat scroll) --- */
+.navbar {
+    transition: all 0.4s ease;
+}
+
+/* --- Style Khusus Nama Siswa di Card --- */
+.card-body h6 {
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+[data-bs-theme="dark"] .card-body h6 {
+    color: #fff;
+}
+
+
+.tanpa-bots{
+    background-color: blue;
+    padding: 20px;
+    color: white;
+}
+
+.tanpa-bots:hover{
+    background-color: darkblue;
+    cursor: pointer;
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+            /* Mencegah scroll ke samping di HP */
+        }
+
+        /* Navbar Glassmorphism */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(33, 37, 41, 0.9) !important;
+        }
+
+        /* Carousel Responsive Height */
+        .carousel-item img {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Untuk Laptop: Tinggi carousel dikecilkan agar konten bawah terlihat */
+        @media (min-width: 769px) {
+            .carousel-item img {
+                height: 400px;
+                border-radius: 20px;
+            }
+        }
+
+        /* Untuk HP: Tinggi carousel disesuaikan, kartu lebih besar */
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 220px;
+            }
+
+            .card {
+                min-height: 250px;
+                /* Kartu lebih tinggi di HP agar tidak terlalu kecil */
+            }
+
+            .card-img-top {
+                height: 150px;
+                /* Gambar kartu sedikit lebih kecil di HP */
+            }
+
+            h6 {
+                font-size: 1.1rem;
+                /* Nama lebih besar di HP */
+            }
+
+            .small {
+                font-size: 0.9rem;
+                /* Role lebih mudah dibaca */
+            }
+        }
+
+        /* Card Hover Effect */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* Struktur Kelas: Kartu divisi */
+        .struktur-card {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+#typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+        .struktur-card {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .struktur-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .rounded-pill-start {
+            border-radius: 50px 0 0 50px !important;
+        }
+
+        .rounded-pill-end {
+            border-radius: 0 50px 50px 0 !important;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            /* Menghilangkan garis biru saat tombol menu diklik */
+        }
+
+        /* BACKGROUND FOTO BLUR */
+.bg-blur-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Berada di paling belakang */
+    background-image: url('BARENG3.jpeg'); /* GANTI DENGAN NAMA FOTO KAMU */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px) brightness(0.7); /* Mengatur blur dan kegelapan (brightness) */
+    transform: scale(1.1); /* Zoom sedikit agar pinggiran putih blur tidak terlihat */
+}
+
+/* Penyesuaian Body agar transparan */
+body {
+    background-color: transparent !important;
+}
+
+/* Memberikan sedikit efek kaca pada card agar kontras dengan background */
+.card {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* Jika dalam Dark Mode, kartu menyesuaikan */
+[data-bs-theme="dark"] .card {
+    background-color: rgba(45, 45, 45, 0.8) !important;
+}
+
+/* CSS KHUSUS TOMBOL IG */
+.ig-section {
+    padding: 15px;
+    margin-top: -10px; /* Menempel sedikit ke carousel agar rapi */
+}
+
+.ig-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+    width: 100%;
+    max-width: 400px; /* Agar tidak terlalu lebar di laptop */
+}
+
+.ig-button:hover {
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.6);
+}
+
+.ig-button i {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+/* FLOATING MUSIC BUTTON */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* Warna saat musik menyala */
+.music-btn.playing {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    animation: pulse-animation 2s infinite;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.7); }
+    100% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
+}
+
+/* COUNTDOWN MELAYANG DI KIRI */
+.floating-countdown {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Di sisi kiri */
+    z-index: 9998; /* Di bawah tombol musik sedikit */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 140px; /* Ukuran pas untuk HP */
+}
+
+.countdown-title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    color: #00d4ff;
+}
+
+#countdown-float {
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; /* Gaya digital */
+}
+
+
+/* MENGUNCI UKURAN FOTO/VIDEO DI MODAL */
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Jeda sedikit dari pinggir */
+    background: none !important;
+}
+
+/* Memaksa konten modal muat dalam satu layar tanpa scroll */
+.modal-body img, 
+.modal-body video {
+    max-width: 95vw;    /* Lebar maks 95% lebar layar */
+    max-height: 80vh;   /* Tinggi maks 80% tinggi layar - INI KUNCINYA */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* Hilangkan scrollbar di modal */
+.modal-open {
+    overflow: hidden !important;
+}

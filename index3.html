@@ -1,0 +1,22 @@
+/* EFEK FOTO SISWA: HITAM PUTIH KE BERWARNA */
+.card-img-top {
+    filter: grayscale(100%); /* Defaultnya hitam putih */
+    transition: filter 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
+}
+
+.card:hover .card-img-top {
+    filter: grayscale(0%); /* Berubah jadi berwarna saat disentuh */
+    transform: scale(1.05); /* Sedikit nge-zoom biar keren */
+}
+
+/* Biar kartu siswanya juga punya efek bayangan pas di-hover */
+.card {
+    transition: box-shadow 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
